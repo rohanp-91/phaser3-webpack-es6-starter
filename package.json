@@ -1,0 +1,22 @@
+{
+  "name": "phaser3-webpack-es6-starter",
+  "version": "1.0.0",
+  "description": "A project starter for Phaser-3 development using Webpack and ES6",
+  "main": "index.js",
+  "repository": "https://github.com/rohanp-91/phaser3-webpack-es6-starter.git",
+  "author": "Rohan Pathak",
+  "license": "MIT",
+  "private": true,
+  "devDependencies": {
+    "@babel/core": "^7.4.3",
+    "@babel/preset-env": "^7.4.3",
+    "babel-loader": "^8.0.5",
+    "copy-webpack-plugin": "^5.0.2",
+    "webpack": "^4.29.6",
+    "webpack-cli": "^3.3.0",
+    "webpack-dev-server": "^3.2.1"
+  },
+  "dependencies": {
+    "phaser": "^3.16.2"
+  }
+}
