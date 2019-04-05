@@ -1,5 +1,6 @@
 const copyWebpackPlugin = require('copy-webpack-plugin');
 const path = require('path');
+const webpack = require('webpack');
 
 module.exports = {
     
@@ -38,7 +39,23 @@ module.exports = {
             {
                 from: path.resolve(__dirname, 'index.html'),
                 to: path.resolve(__dirname, 'build')
+            },
+            {
+                from: path.resolve(__dirname, 'assets', '**', '*'),
+                to: path.resolve(__dirname, 'build')
             }
-        ])
+        ]),
+        new webpack.DefinePlugin(
+            {
+                'typeof CANVAS_RENDERER': JSON.stringify(true),
+                'typeof WEBGL_RENDERER': JSON.stringify(true)
+            }
+        ),
+        new webpack.optimize.CommonsChunkPlugin(
+            {
+                name: 'prod-dependencies',
+                filename: 'prod-dependencies.bundle.js'
+            }
+        )
     ]
 }
